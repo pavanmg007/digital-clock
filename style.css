@@ -160,7 +160,7 @@ img {
   display: block;
   position: absolute;
   height: 33px;
-  border: 1px solid #c2c2c2;
+  border-left: 2px solid #c2c2c2;
   top: 55px;
   left: 15px;
 }
