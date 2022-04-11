@@ -213,6 +213,7 @@ label {
   display: block;
   width: 100%;
   margin: 11px 10px 0 0;
+  cursor: pointer;
 }
 .btn:hover {
   background: transparent
