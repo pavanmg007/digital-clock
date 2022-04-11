@@ -225,6 +225,8 @@ label {
 .time-stats {
   border: none;
   background-color: #694099;
+  max-width: 100%;
+  margin: 0 0 0 auto;
 }
 .time-stats p {
   font-size: 1.1em;

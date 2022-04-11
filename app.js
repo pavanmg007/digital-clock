@@ -5,14 +5,8 @@ btn.addEventListener("mouseover", function () {
 btn.addEventListener("mouseout", function () {
   this.innerHTML = "Set Alarm";
 });
-// playing with date and time
-const date = new Date();
-let hour = date.getHours();
-let minute = date.getMinutes();
-let second = date.getSeconds();
-let ampm = document.getElementById("ampm");
-
-function displayTime() {
+// clock timer
+let displayTime=() =>{
   const date = new Date();
   let hour = date.getHours();
   let minute = date.getMinutes();
@@ -20,22 +14,19 @@ function displayTime() {
   let ampm = document.getElementById("ampm");
   // set AM & PM
   let newHour = hour;
-  if (newHour >= 12) {
-    ampm.innerHTML = "PM";
-  } else {
-    ampm.innerHTML = "AM";
-  }
+  newHour >= 12 ? (ampm.innerHTML = "PM") : (ampm.innerHTML = "AM");
   // 12 hour format
-  if (newHour > 12) {
-    newHour -= 12;
-  }
+  newHour > 12 ? (newHour -= 12) : (newHour = 12);
   // adding time to html
   document.getElementById("hour").innerHTML = newHour;
   document.getElementById("minute").innerHTML = minute;
   document.getElementById("second").innerHTML = second;
 }
-setInterval(displayTime, 100);
+setInterval(displayTime, 1000);
 
+// setting time
+const date = new Date();
+let hour = date.getHours();
 let wakeUp = document.getElementById("wakeUp");
 let lunch = document.getElementById("lunch");
 let nap = document.getElementById("nap");
@@ -57,8 +48,14 @@ function setTime() {
     document.getElementById("timeMessage").innerHTML = "Good night! Have a nice sleep 😴";
     document.getElementById("clock-image").src = "./images/night-sleep.svg";
   }
+  let timing = document.getElementsByClassName("timing");
+  timing[0].innerText = wakeUp.options[wakeUp.selectedIndex].text;
+  timing[1].innerText = lunch.options[lunch.selectedIndex].text;
+  timing[2].innerText = nap.options[nap.selectedIndex].text;
+  timing[3].innerText = night.options[night.selectedIndex].text;
 }
-function setMessage() {
+document.getElementById("submit").addEventListener("click", setTime, false);
+(function setMessage() {
   if (hour <= 12) {
     document.getElementById("form-message").innerHTML = "Good Morning!";
   }
@@ -68,9 +65,7 @@ function setMessage() {
   if (hour >= 16 && hour < 19) {
     document.getElementById("form-message").innerHTML = "Good Evening!";
   }
-  if (hour >= 19 && hour < 23) {
+  if (hour >= 19 && hour <= 23) {
     document.getElementById("form-message").innerHTML = "Good Night!";
   }
-}
-document.getElementById("submit").addEventListener("click", setTime, false);
-window.addEventListener("load", setMessage, false);
+})();
