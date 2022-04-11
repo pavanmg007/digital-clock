@@ -51,8 +51,8 @@
           </div>
           <div class="form-inner flex aic">
             <img src="./images/lunch_time.svg" alt="" />
-            <label for="wakeup">Set lunch time</label>
-            <select name="wakeUp" id="wakeUp">
+            <label for="lunch">Set lunch time</label>
+            <select name="lunch" id="lunch">
               <option value="0" selected="">12 AM - 1 AM</option>
               <option value="1">1 AM - 2 AM</option>
               <option value="2">2 AM - 3 AM</option>
@@ -81,8 +81,8 @@
           </div>
           <div class="form-inner flex aic">
             <img src="./images/nap_time.svg" alt="" />
-            <label for="wakeup">Set nap time</label>
-            <select name="wakeUp" id="wakeUp">
+            <label for="nap">Set nap time</label>
+            <select name="nap" id="nap">
               <option value="0" selected="">12 AM - 1 AM</option>
               <option value="1">1 AM - 2 AM</option>
               <option value="2">2 AM - 3 AM</option>
@@ -111,8 +111,8 @@
           </div>
           <div class="form-inner flex aic">
             <img src="./images/nightsvg.svg" alt="" />
-            <label for="wakeup">Set night time</label>
-            <select name="wakeUp" id="wakeUp">
+            <label for="night">Set night time</label>
+            <select name="night" id="night">
               <option value="0" selected="">12 AM - 1 AM</option>
               <option value="1">1 AM - 2 AM</option>
               <option value="2">2 AM - 3 AM</option>
@@ -142,12 +142,12 @@
         </div>
         <!-- time message -->
         <div class="card form-message">
-          <h1>Good morning!! wake up !!</h1>
+          <h1 id="form-message"></h1>
         </div>
         <div class="form-bottom flex jcsb">
           <!-- set Alarm Button -->
           <div>
-            <a href="" class="btn">Set Alarm</a>
+            <a id="submit" class="btn">Set Alarm</a>
           </div>
           <div class="card time-stats">
             <p>Wake Up Time : 10AM - 11AM</p>
@@ -165,36 +165,36 @@
           <!-- Time Display -->
           <div class="time flex aic jcsb">
             <div class="hour">
-              <p>12</p>
+              <p id="hour"></p>
               <p>hours</p>
             </div>
             <div>
               <p>:</p>
             </div>
             <div class="minute">
-              <p>00</p>
+              <p id="minute"></p>
               <p>mins</p>
             </div>
             <div>
               <p>:</p>
             </div>
             <div class="seconds">
-              <p>01</p>
+              <p id="second">10</p>
               <p>secs</p>
             </div>
             <div class="am">
-              <p>AM</p>
+              <p id="ampm"></p>
             </div>
           </div>
         </div>
         <!-- Clock Message -->
         <div class="card clock-message">
-          <h1>grab some healthy breakfast!!</h1>
+          <h1 id="timeMessage">Set the time</h1>
         </div>
         <div class="timecard background1"></div>
         <div class="timecard background2"></div>
         <!-- Clock Message image -->
-        <img class="clock-image" src="./images/Group 5183.svg" alt="" />
+        <img id="clock-image" class="clock-image" src="./images/default.svg" alt="" />
       </div>
     </section>
     <script src="./app.js"></script>
