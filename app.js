@@ -34,7 +34,6 @@ function displayTime() {
   document.getElementById("minute").innerHTML = minute;
   document.getElementById("second").innerHTML = second;
 }
-displayTime();
 setInterval(displayTime, 100);
 
 let wakeUp = document.getElementById("wakeUp");
