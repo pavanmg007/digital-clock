@@ -16,7 +16,7 @@ let displayTime=() =>{
   let newHour = hour;
   newHour >= 12 ? (ampm.innerHTML = "PM") : (ampm.innerHTML = "AM");
   // 12 hour format
-  newHour > 12 ? (newHour -= 12) : (newHour = 12);
+  newHour > 12 ? (newHour -= 12) : (newHour = 0 ? (newHour = 12) : (newHour));
   // adding time to html
   document.getElementById("hour").innerHTML = newHour;
   document.getElementById("minute").innerHTML = minute;
